@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" onsubmit="return fun();">
+        <label>name</label>
+        <input type="text" placeholder=" enter name" id="name"><br><br>
+        <label for="">contact</label>
+        <input type="text" placeholder=" enter contact" id="contact"><br><br>
+        <label for="">password</label>
+        <input type="text"  placeholder=" enter password" id="pass"><br><br>
+        <label for="">confirm password</label>
+        <input type="text"  placeholder=" enter correct password" id="cpass"><br><br>
+        <input type="submit">
+    </form>
+    
+    <script>
+        function fun(){
+            let name= document.getElementById('name').value;
+            let contact= document.getElementById('contact').value;
+            let pass= document.getElementById('pass').value;
+            let cpass= document.getElementById('cpass').value;
+
+            if(name==""){
+                alert("please enter your name");
+                document.getElementById('name').focus();
+                return false;
+            }
+            else if(contact=="") {
+            alert("please enter no.");
+            document.getElementById('contact').focus();
+                return false;
+        }
+        else if(contact.length<10 || contact.length>10){
+            alert("please enter 10 digit no.");
+            document.getElementById('contact').focus();
+             return false;
+        }
+             else if(isNaN(contact)){
+            alert("please enter 10 digit no.");
+            document.getElementById('contact').focus();
+             return false;
+             }
+             else if(pass==""){
+            alert("please enter pass");
+            document.getElementById('pass').focus();
+             return false;
+             }
+             else if(!(pass.match(/[!@#$%^&*()]/))){
+            alert("please enter pass");
+            document.getElementById('pass').focus();
+             return false;
+             }
+             else if(pass!=cpass){
+            alert("please re-enter pass");
+            document.getElementById('cpass').focus();
+             return false;
+             }
+            }
+    </script>
+</body>
+</html>
